@@ -125,3 +125,32 @@ void Ordena::Quicksort( int vet [] , int inicio , int fim ){
     if( inicio < j ) Quicksort( inicio , j);
     if( i < fim ) Quicksort(i , fim);
 };
+void Ordena::Intercala(int vet [] , int p , int r){
+    meio = ( int) (( p + r ) /2) ;
+    int i1 =0, i2 =p, i3 = meio +1;
+    // vetor temporario auxiliar
+    int temp [r -p +1];
+
+    while (( i2 <= meio ) &&( i3 <= r))
+        if( vet [ i2 ] < vet [ i3 ])
+            temp [ i1 ++] = vet [ i2 ++];
+        else
+            temp [i1 ++] = vet [i3 ++];
+
+    while( i2 <= meio )
+        temp [i1 ++] = vet [ i2 ++];
+
+    while( i3 <= r )
+        temp [i1 ++] = vet [ i3 ++];
+    
+    for( int i =p; i <= r; i ++)
+        vet [i ] = temp [i -p];
+};
+void Ordena::Mergesort( int vet [] , int p , int r){
+    if(p < r) {
+        int meio = (int) ((p +r) /2);
+        Mergesort(p, meio);
+        Mergesort(meio + 1, r) ;
+        Intercala(vet , p, r);
+    }
+};
