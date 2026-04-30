@@ -91,9 +91,9 @@ void Ordena::shellsort(int vetor [] , int TAM) {
         do {
             troca = false ;
             for ( j = 0; j < TAM - i; j ++) {
-                if ( vetor [j ] > vetor [ j + i ]) {
+                if ( vetor [j ] > vetor [j + i]) {
                     aux = vetor [j ];
-                    vetor [j ] = vetor [ j + i ];
+                    vetor [j] = vetor [j + i];
                     vetor [j + i] = aux ;
                 troca = true ;
                 }
@@ -101,4 +101,27 @@ void Ordena::shellsort(int vetor [] , int TAM) {
         }while (troca);
     i /= 2;
     }
+};
+void Ordena::Quicksort( int vet [] , int inicio , int fim ){
+    i = inicio;
+    j = fim;
+    meio = (int) (( i +j) /2);
+    pivo = vet [meio];
+    do{
+        while( vet [i] < pivo ){
+        i ++;
+        }
+        while( vet [j] > pivo ){
+        j - -;
+        }
+        if(i <= j){
+            aux = vet [i];
+            vet [i] = vet [j];
+            vet [j] = aux ;
+            i ++;
+            j - -;
+        }
+    }while(j > i);
+    if( inicio < j ) Quicksort( inicio , j);
+    if( i < fim ) Quicksort(i , fim);
 };
