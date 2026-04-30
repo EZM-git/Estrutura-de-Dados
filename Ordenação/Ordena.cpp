@@ -83,3 +83,22 @@ void Ordena::Selecao(int v[], int t, int *comp, int *trocas){
         }
     }
 };
+void Ordena::shellsort(int vetor [] , int TAM) {
+    int i , j , aux;
+    bool troca;
+    i = (TAM - 1) / 2;
+    while (i != 0) {
+        do {
+            troca = false ;
+            for ( j = 0; j < TAM - i; j ++) {
+                if ( vetor [j ] > vetor [ j + i ]) {
+                    aux = vetor [j ];
+                    vetor [j ] = vetor [ j + i ];
+                    vetor [j + i] = aux ;
+                troca = true ;
+                }
+            }
+        }while (troca);
+    i /= 2;
+    }
+};
