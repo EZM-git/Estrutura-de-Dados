@@ -9,7 +9,8 @@ class Ordena
         void BolhaMelhorado(int[], int, int*, int*);
         void Insercao(int[], int, int*, int*);
         void Selecao(int[], int, int*, int*);
-        void shellsort(int[] , int);
-        void Quicksort(int[] , int, int);
-        void Intercala(int[] , int, int);
+        void shellsort(int[], int);
+        void Quicksort(int[], int, int);
+        void Intercala(int[], int, int);
+        void Mergesort(int [], int, int);
 };
