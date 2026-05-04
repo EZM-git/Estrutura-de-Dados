@@ -112,7 +112,7 @@ void Ordena::Quicksort( int vet [] , int inicio , int fim ){
         i ++;
         }
         while( vet [j] > pivo ){
-        j - -;
+        j --;
         }
         if(i <= j){
             aux = vet [i];
