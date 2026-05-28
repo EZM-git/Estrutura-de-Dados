@@ -12,7 +12,6 @@ Fila* Fila::Inserir(Fila* F, string nome, string cidade, string estado, int ano)
         F -> elo = novo;
     }
     F = novo;
-    F -> elo = novo;
     return F;
 };
 
