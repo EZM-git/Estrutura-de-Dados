@@ -27,12 +27,22 @@ int main()
 
     while(aux != NULL){
         i = 0;
-        while((i < Qt) & (aux != NULL)){
+        while((i < Qt) && (aux != NULL)){
             Times[i] = obj.Inserir(Times[i], aux->nome, aux->habilidade);
             i++;
-            cout << aux->nome << " | " << aux->habilidade << endl;
             aux = aux->elo;
         }
+    }
+    
+    
+    for(i = 0; i < Qt; i++){
+        cout << "Time " << i+1 << endl;
+        aux = Times[i][0];
+        while(aux != NULL){
+            cout << aux->nome << "\n";
+            aux = aux->elo;
+        }
+        cout << "\n";
     }
 
 
